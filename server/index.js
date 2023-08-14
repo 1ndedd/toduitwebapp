@@ -5,8 +5,11 @@ const express = require("express");
 
 const PORT = process.env.PORT || 3001; // port num
 
+const cors = require("cors");
+
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 const db = require("./models");	//fetch tables
 
