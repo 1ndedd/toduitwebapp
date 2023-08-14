@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 module.exports = (sequelize, DataTypes) => {
     
     const Task = sequelize.define("Task", {
@@ -8,4 +9,16 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     return Task;
+=======
+module.exports = (sequelize, DataTypes) => {
+    
+    const Task = sequelize.define("Task", {
+        task:{
+            type:DataTypes.STRING,
+            allowNull: false,
+        }
+    });
+
+    return Task;
+>>>>>>> master
 }
