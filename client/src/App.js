@@ -1,29 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
-import axios from "axios";
-import { useEffect, useState } from 'react';
-
+import  {Routes, Route, Link} from "react-router-dom"
+import Home from "./pages/Home.js"
+import CreateTask from "./pages/CreateTask.js"
 
 function App() {
-  const [listOfTasks, setListOfPosts] = useState([]);
-
-  useEffect(() => {
-    axios.get("http://localhost:3001/Task").then((res) => {
-      setListOfPosts(res.data); 
-    }); 
-  }, []);
 
   return (
-    <div className="App"> {
-      listOfTasks.map((value, key) => {
-        return <div className="task"> 
-          <div className='title'> {value.task} </div> 
-          <div className='body'> {value.id} </div> 
-          <div className='body'> {value.createdAt} </div> 
-        </div>
-    })
-  }
-  </div>);
+    <>
+    <nav>
+      <u1>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/CreateTask">Create Task</Link>
+        </li>
+      </u1>
+    </nav>
+    
+    <Routes>
+          <Route path="/" element={ <Home />} /> 
+          <Route path="/CreateTask" element={ <CreateTask />} /> 
+          
+          <Route/>
+
+    </Routes>
+    </>
+  );
+    
 }
 
 export default App;
