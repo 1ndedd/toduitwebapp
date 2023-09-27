@@ -11,18 +11,18 @@ router.get("/" , async (req, res) => {
 
 router.post("/" , async (req, res) => {
     const post = req.body;  //get all content from frontend
-    await Task.create(post);
+    await Task.create(post); //call sequelize to insert data
 
     // res.send( {data: "Task uploaded"})
     res.json( post);
 });
 
-router.put("/" , (req, res) => {
-    res.send( {data: "Task updated"})
-});
+// router.put("/" , (req, res) => {
+//     res.send( {data: "Task updated"})
+// });
 
-router.delete("/" , (req, res) => {
-    res.send( {data: "Tasks deleted"})
-});
+// router.delete("/" , (req, res) => {
+//     res.send( {data: "Tasks deleted"})
+// });
 
 module.exports = router;
